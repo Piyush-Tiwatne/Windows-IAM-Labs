@@ -45,7 +45,7 @@ Created three groups:
 - GroupC (simulated nested group; may include GroupA)  
 
 ### 📷 Screenshot: Groups
-![Step 2 – Groups](groups_created.png)
+![Step 2 – Groups](Screenshot/groups_created.png)
 
 
 
@@ -57,9 +57,9 @@ Created three groups:
 - **GroupC → Simulated nested membership** (e.g., contains GroupA)
 
 ###  Screenshot: Group Memberships
-![Groups](GroupA_memmbers.png)
-![Groups ](GroupB_members.png)
-![Groups ](GroupC_members.png)
+![Groups](Screenshot/GroupA_memmbers.png)
+![Groups ](Screenshot/GroupB_members.png)
+![Groups ](Screenshot/GroupC_members.png)
 
 
 
@@ -72,7 +72,7 @@ Created three groups:
 whoami /groups
 
 ### Screenshot: Whoami
-![Whoami ](whoami_groups.png)
+![Whoami ](Screenshot/whoami_groups.png)
 
 
 
