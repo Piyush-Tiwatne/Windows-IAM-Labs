@@ -32,7 +32,7 @@ Created four local users:
 - User4  
 
 ###  Screenshot: Users
-*(Add screenshot from `lusrmgr.msc` here)*
+
 
 ---
 
@@ -44,7 +44,7 @@ Created three groups:
 - GroupC (simulated nested group; may include GroupA)  
 
 ### 📷 Screenshot: Groups
-*(Add screenshot from `lusrmgr.msc` here)*
+
 
 ---
 
@@ -54,15 +54,37 @@ Created three groups:
 - **GroupC → Simulated nested membership** (e.g., contains GroupA)
 
 ###  Screenshot: Group Memberships
-*(Add screenshot showing users added to groups here)*
+
 
 ---
 
-## 🧪 Step 4 – Verification of Effective Access (User1)
+##  Step 4 – Verification of Effective Access (User1)
 **Purpose:** Step 4 verifies **what groups User1 effectively belongs to** and therefore **what permissions they have**. This includes **direct membership** (GroupA) and **indirect/nested membership** (GroupC).  
 
 **Command used:**
-
-```cmd
 whoami /groups
+
 ### Screenshot:
+
+
+
+##  IAM Relevance
+- Permissions are assigned to **groups, not individual users**, which improves scalability.  
+- **RBAC (Role-Based Access Control)** ensures that changing group permissions automatically affects all members.  
+- **Nested groups** allow **indirect permission inheritance** (e.g., User1 inherits GroupC permissions via GroupA).  
+- Security tokens determine the **actual privileges** a user has at login.  
+- Step 4 demonstrates how **effective permissions** are calculated based on group membership.
+
+---
+
+##  Key Learnings
+- Groups simplify access management and reduce **manual permission errors**.  
+- RBAC improves **security management** by centralizing permission control.  
+- Group membership, including **nested groups**, impacts a user’s effective privileges.  
+- Verifying effective access for User1 helps understand **how permissions propagate** in Windows.  
+- Step 4 is essential to confirm that **users have the expected access** based on group assignments.
+
+
+
+
+
