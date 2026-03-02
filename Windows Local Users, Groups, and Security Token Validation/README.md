@@ -1,47 +1,67 @@
-Lab 1: Identity Provisioning and Group-Based Access Control (GBAC)
-# Executive Summary
-In this project, I performed the foundational tasks of an IAM Administrator by provisioning local identities and organizing them into a scalable group hierarchy. The lab concludes with a technical verification of a user's Security Access Token to ensure that group memberships are correctly inherited and recognized by the OS.
+# 🧪 Lab 1 – Users, Groups & Simulated Nested Groups
 
-# Step-by-Step Implementation
-## Phase 1: Identity Provisioning
-I created four unique local user accounts. In an enterprise setting, this represents the "Joiner" process where new identities are added to the system's identity store (SAM database).
+## 🎯 Objective
+To understand Windows local user management, group membership, and role-based access control (RBAC), and to verify effective permissions for **User1**.
 
-Action: Created User1, User2, User3, and User4 via lusrmgr.msc.
+---
 
-Technical Note: Each account is assigned a unique Security Identifier (SID).
+## 🖥 Environment
+- OS: Windows 10/11 Pro  
+- Tool: lusrmgr.msc  
+- Machine Type: Standalone (Non-Domain)  
 
-Evidence: 
+> **Note:** This lab focuses on local users and groups, not domain accounts.
 
+---
 
-## Phase 2: Logical Grouping (Resource Management)
-To manage permissions efficiently, I created three administrative groups. Managing access via groups (RBAC) is an industry best practice as it prevents "Permission Creep" and simplifies audits.
+## 🔐 Concepts Covered
+- Local Users & Groups  
+- Security Identifiers (SID)  
+- Role-Based Access Control (RBAC)  
+- Group Membership  
+- Security Tokens  
 
-Groups Created: GroupA, GroupB, GroupC.
+---
 
-Assignment: Added User1 & User2 to GroupA; added User3 & User4 to GroupB.
+## 👤 Step 1 – Created Users
+Created four local users:
 
-Evidence: 
+- **User1** (Primary user for access verification)  
+- User2  
+- User3  
+- User4  
 
+### 📷 Screenshot: Users
+*(Add screenshot from `lusrmgr.msc` here)*
 
-## Phase 3: Simulated Nested Grouping
-To demonstrate the concept of Transitive Membership, I simulated a nested group structure. I added the members of the departmental groups into GroupC (The "Parent" or "Master" group).
+---
 
-Logic: If GroupC is granted access to a folder, all members of GroupA and GroupB should theoretically inherit those rights.
+## 👥 Step 2 – Created Groups
+Created three groups:
 
-Evidence: 
+- **GroupA** (contains User1 and User2)  
+- GroupB (contains User3 and User4)  
+- GroupC (simulated nested group; may include GroupA)  
 
-## Phase 4: Security Token Audit (Technical Verification)
-The final and most critical step was verifying the Access Token. I logged in as User1 to trigger a new authentication session and used the CLI to inspect the active security context.
+### 📷 Screenshot: Groups
+*(Add screenshot from `lusrmgr.msc` here)*
 
-### Command: whoami /groups
+---
 
-### Result: The system successfully listed GroupA and GroupC as active SIDs in User1’s token.
+## 🔁 Step 3 – Assigned Users to Groups
+- **GroupA → User1, User2**  
+- **GroupB → User3, User4**  
+- **GroupC → Simulated nested membership** (e.g., contains GroupA)
 
-Evidence: 
+### 📷 Screenshot: Group Memberships
+*(Add screenshot showing users added to groups here)*
 
-##  Key IAM Takeaways
-Token Refresh: I observed that group membership changes require a fresh login session to update the user's security token.
+---
 
-Scalability: Assigning permissions to groups rather than individuals is the only way to manage large-scale corporate environments.
+## 🧪 Step 4 – Verification of Effective Access (User1)
+**Purpose:** Step 4 verifies **what groups User1 effectively belongs to** and therefore **what permissions they have**. This includes **direct membership** (GroupA) and **indirect/nested membership** (GroupC).  
 
-Auditability: Using whoami provides a clear audit trail of what a user's "Effective Permissions" actually are.
+**Command used:**
+
+```cmd
+whoami /groups
