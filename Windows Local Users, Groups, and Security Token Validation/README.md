@@ -32,6 +32,7 @@ Created four local users:
 - User4  
 
 ###  Screenshot: Users
+![Step 1 – Users](users_created.png)
 
 
 ---
@@ -44,6 +45,8 @@ Created three groups:
 - GroupC (simulated nested group; may include GroupA)  
 
 ### 📷 Screenshot: Groups
+![Step 2 – Groups](groups_created.png)
+
 
 
 ---
@@ -54,6 +57,10 @@ Created three groups:
 - **GroupC → Simulated nested membership** (e.g., contains GroupA)
 
 ###  Screenshot: Group Memberships
+![Groups](GroupA_memmbers.png)
+![Groups ](GroupB_members.png)
+![Groups ](GroupC_members.png)
+
 
 
 ---
@@ -64,7 +71,8 @@ Created three groups:
 **Command used:**
 whoami /groups
 
-### Screenshot:
+### Screenshot: Whoami
+![Whoami ](whoami_groups.png)
 
 
 
