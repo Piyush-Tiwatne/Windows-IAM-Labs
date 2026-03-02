@@ -30,12 +30,12 @@ Logic: If GroupC is granted access to a folder, all members of GroupA and GroupB
 
 Evidence: 
 
-##Phase 4: Security Token Audit (Technical Verification)
+## Phase 4: Security Token Audit (Technical Verification)
 The final and most critical step was verifying the Access Token. I logged in as User1 to trigger a new authentication session and used the CLI to inspect the active security context.
 
-Command: whoami /groups
+### Command: whoami /groups
 
-Result: The system successfully listed GroupA and GroupC as active SIDs in User1’s token.
+### Result: The system successfully listed GroupA and GroupC as active SIDs in User1’s token.
 
 Evidence: 
 
