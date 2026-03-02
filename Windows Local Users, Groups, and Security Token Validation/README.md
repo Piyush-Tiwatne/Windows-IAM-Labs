@@ -1,11 +1,11 @@
-# 🧪 Lab 1 – Users, Groups & Simulated Nested Groups
+#  Lab 1 – Windows Local Users, Groups, and Security Token Validation
 
-## 🎯 Objective
+##  Objective
 To understand Windows local user management, group membership, and role-based access control (RBAC), and to verify effective permissions for **User1**.
 
 ---
 
-## 🖥 Environment
+##  Environment
 - OS: Windows 10/11 Pro  
 - Tool: lusrmgr.msc  
 - Machine Type: Standalone (Non-Domain)  
@@ -14,7 +14,7 @@ To understand Windows local user management, group membership, and role-based ac
 
 ---
 
-## 🔐 Concepts Covered
+##  Concepts Covered
 - Local Users & Groups  
 - Security Identifiers (SID)  
 - Role-Based Access Control (RBAC)  
@@ -23,7 +23,7 @@ To understand Windows local user management, group membership, and role-based ac
 
 ---
 
-## 👤 Step 1 – Created Users
+##  Step 1 – Created Users
 Created four local users:
 
 - **User1** (Primary user for access verification)  
@@ -31,12 +31,12 @@ Created four local users:
 - User3  
 - User4  
 
-### 📷 Screenshot: Users
+###  Screenshot: Users
 *(Add screenshot from `lusrmgr.msc` here)*
 
 ---
 
-## 👥 Step 2 – Created Groups
+##  Step 2 – Created Groups
 Created three groups:
 
 - **GroupA** (contains User1 and User2)  
@@ -48,12 +48,12 @@ Created three groups:
 
 ---
 
-## 🔁 Step 3 – Assigned Users to Groups
+##  Step 3 – Assigned Users to Groups
 - **GroupA → User1, User2**  
 - **GroupB → User3, User4**  
 - **GroupC → Simulated nested membership** (e.g., contains GroupA)
 
-### 📷 Screenshot: Group Memberships
+###  Screenshot: Group Memberships
 *(Add screenshot showing users added to groups here)*
 
 ---
@@ -65,3 +65,4 @@ Created three groups:
 
 ```cmd
 whoami /groups
+### Screenshot:
