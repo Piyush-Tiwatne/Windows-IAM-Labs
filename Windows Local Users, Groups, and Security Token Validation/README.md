@@ -32,7 +32,7 @@ Created four local users:
 - User4  
 
 ###  Screenshot: Users
-![Step 1 – Users](users_created.png)
+![Step 1 – Users](/Screenshotusers_created.png)
 
 
 ---
